@@ -3,8 +3,10 @@ package org.klozevitz.kameleoon_test.model.dao.services;
 import org.klozevitz.kameleoon_test.model.dao.daoDB.IDaoQuote;
 import org.klozevitz.kameleoon_test.model.dao.repositories.IRepoQuote;
 import org.klozevitz.kameleoon_test.model.dao.repositories.IRepoUser;
+import org.klozevitz.kameleoon_test.model.dao.repositories.IRepoVote;
 import org.klozevitz.kameleoon_test.model.entities.Quote;
 import org.klozevitz.kameleoon_test.model.entities.User;
+import org.klozevitz.kameleoon_test.model.entities.Vote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +20,8 @@ public class QuoteService implements IDaoQuote {
     IRepoQuote quoteRepo;
     @Autowired
     IRepoUser userRepo;
+    @Autowired
+    IRepoVote voteRepo;
 
 
     @Override
@@ -57,7 +61,7 @@ public class QuoteService implements IDaoQuote {
         }
         userRepo.findById(deleted.getUser().getId()).orElse(new User()).
                 getQuotes().remove(deleted);
-//delete all likes
+        voteRepo.deleteAll(voteRepo.findAllByQuote(deleted));
         quoteRepo.delete(deleted);
         return deleted;
     }

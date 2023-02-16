@@ -31,7 +31,7 @@ public class Quote {
 
     @OneToMany(mappedBy = "quote")
     @JsonIgnore
-    Set<Stats> stats;
+    Set<Vote> votes;
 
 
 
@@ -41,7 +41,7 @@ public class Quote {
         this.content = "undefined";
         this.updated = LocalDate.of(1000, 1, 1);
         this.user = new User();
-        this.stats = new HashSet<>();
+        this.votes = new HashSet<>();
     }
 
     public Quote(String content, User user) {

@@ -6,15 +6,15 @@ import lombok.Data;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "stats_t")
+@Table(name = "vote_t")
 @Data
-public class Stats {
+public class Vote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "stat")
-    private Boolean stat;
+    @Column(name = "vote")
+    private Boolean vote;
 
     @Column(name = "date")
     private LocalDate date;
@@ -25,15 +25,15 @@ public class Stats {
 
 
 //nullObject for Optional<Like> database responses
-    public Stats() {
+    public Vote() {
         this.id = -1L;
-        this.stat = false;
+        this.vote = false;
         this.date = LocalDate.of(1000, 1, 1);
         this.quote = new Quote();
     }
 
-    public Stats(Boolean stat, Quote quote) {
-        this.stat = stat;
+    public Vote(Boolean vote, Quote quote) {
+        this.vote = vote;
         this.date = LocalDate.now();
         this.quote = quote;
     }
@@ -41,7 +41,7 @@ public class Stats {
     @Override
     public String toString() {
         return "{id=" + id +
-                ", stat=" + stat +
+                ", vote=" + vote +
                 ", date=" + date +
                 ", quote=" + quote + '}';
     }
