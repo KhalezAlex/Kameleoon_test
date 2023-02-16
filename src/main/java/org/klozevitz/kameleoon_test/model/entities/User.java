@@ -26,8 +26,8 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "regDate")
-    private LocalDate regDate;
+    @Column(name = "registered")
+    private LocalDate registered;
 
     @OneToMany(mappedBy = "user")
     @JsonIgnore
@@ -41,7 +41,7 @@ public class User {
         this.name = "undefined";
         this.email = "undefined";
         this.password = "undefined";
-        this.regDate = LocalDate.of(1000, 1, 1);
+        this.registered = LocalDate.of(1000, 1, 1);
         this.quotes = new HashSet<>();
     }
 
@@ -49,20 +49,20 @@ public class User {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.regDate = LocalDate.now();
+        this.registered = LocalDate.now();
     }
 
     public User(String name, String password) {
         this.name = name;
         this.email = "undefined";
         this.password = password;
-        this.regDate = LocalDate.now();
+        this.registered = LocalDate.now();
     }
 
     @Override
     public String toString() {
         return "{name='" + name +
                 "', email='" + email +
-                "', regDate=" + regDate + '}';
+                "', regDate=" + registered + '}';
     }
 }

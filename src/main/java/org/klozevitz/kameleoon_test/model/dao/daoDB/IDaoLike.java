@@ -1,4 +1,4 @@
-package org.klozevitz.kameleoon_test.model.dao;
+package org.klozevitz.kameleoon_test.model.dao.daoDB;
 
 import org.klozevitz.kameleoon_test.model.entities.Stats;
 
