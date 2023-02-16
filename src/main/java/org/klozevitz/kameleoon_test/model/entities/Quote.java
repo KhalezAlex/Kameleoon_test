@@ -50,6 +50,12 @@ public class Quote {
         this.user = user;
     }
 
+    public Quote(Long id, String content) {
+        this.id = id;
+        this.updated = LocalDate.now();
+        this.content = content;
+    }
+
     @Override
     public String toString() {
         return "{content='" + content + "', updated=" + updated +
