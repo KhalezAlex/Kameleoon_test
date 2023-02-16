@@ -1,4 +1,4 @@
-package org.klozevitz.kameloon_test.model.entities;
+package org.klozevitz.kameleoon_test.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -15,7 +15,7 @@ import java.util.Set;
 public class Quote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "content", nullable = false)
@@ -26,12 +26,12 @@ public class Quote {
     private LocalDate updated;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @OneToMany(mappedBy = "quote")
     @JsonIgnore
-    Set<Like> likes;
+    Set<Stats> stats;
 
 
 
@@ -41,7 +41,7 @@ public class Quote {
         this.content = "undefined";
         this.updated = LocalDate.of(1000, 1, 1);
         this.user = new User();
-        this.likes = new HashSet<>();
+        this.stats = new HashSet<>();
     }
 
     public Quote(String content, User user) {
