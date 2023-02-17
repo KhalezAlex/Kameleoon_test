@@ -96,36 +96,36 @@
   <tr>
     <td>update</td>
     <td>"/update"</td>
-    <td>int quoteId, String content</td>
     <td>Post</td>
+    <td>int quoteId, String content</td>
     <td>Quote</td>
   </tr>
   <tr>
     <td>delete</td>
     <td>"/delete"</td>
-    <td>int id</td>
     <td>Get</td>
+    <td>int id</td>
     <td>Quote</td>
   </tr>
   <tr>
     <td>top ten</td>
     <td>"/top_ten"</td>
-    <td></td>
     <td>Get</td>
+    <td></td>
     <td>LinkedList<QuoteDTO></td>
   </tr>
   <tr>
     <td>worst ten</td>
     <td>"/worst_ten"</td>
-    <td></td>
     <td>Get</td>
+    <td></td>
     <td>LinkedList<QuoteDTO></td>
   </tr>
   <tr>
     <td>random</td>
     <td>"/random"</td>
-    <td></td>
     <td>Get</td>
+    <td></td>
     <td>Quote</td>
   </tr>
 </table>
