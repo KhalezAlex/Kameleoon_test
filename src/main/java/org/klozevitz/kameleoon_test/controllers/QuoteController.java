@@ -42,13 +42,13 @@ public class QuoteController {
     }
 
     @PostMapping("/update")
-    Quote update(@RequestParam Long quoteId, String content) {
-        return quoteDao.update(new Quote(quoteId, content));
+    Quote update(@RequestParam int quoteId, @RequestParam String content) {
+        return quoteDao.update(new Quote((long) quoteId, content));
     }
 
     @GetMapping("/delete")
     Quote delete(@RequestParam int id) {
-        return quoteDao.delete((long)   id);
+        return quoteDao.delete((long) id);
     }
 
     @GetMapping("/top_ten")
