@@ -1,6 +1,3 @@
-# Kameleoon_test
-Test task from Kameleoon
-
 <h1>
 Тестовое задание (компания Kameleoon)
 </h1>
@@ -35,6 +32,14 @@ Test task from Kameleoon
       </li>
       <li>
         возвращать топ 10 цитат и 10 худших цитат
+      </li>
+    </ol>
+  </li>
+  <li>
+    Для сущности Голос
+    <ol>
+      <li>
+        операция голосования (up/down)
       </li>
     </ol>
   </li>
