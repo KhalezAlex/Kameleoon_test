@@ -58,8 +58,8 @@
   <tr>
     <td>save</td>
     <td>"/save"</td>
-    <td>String name, String password, String email (not required)</td>
     <td>Post</td>
+    <td>String name, String password, String email (not required)</td>
     <td>User</td>
   </tr>
 </table>
@@ -75,22 +75,22 @@
   <tr>
     <td>findAll</td>
     <td>"/all"</td>
-    <td></td>
     <td>Get</td>
+    <td></td>
     <td>List<Quote></td>
   </tr>
   <tr>
     <td>findById</td>
     <td>"/findById"</td>
-    <td>int id</td>
     <td>Get</td>
+    <td>int id</td>
     <td>Quote</td>
   </tr>
   <tr>
     <td>save</td>
     <td>"/save"</td>
-    <td>String content, int userId</td>
     <td>Post</td>
+    <td>String content, int userId</td>
     <td>Quote</td>
   </tr>
   <tr>
