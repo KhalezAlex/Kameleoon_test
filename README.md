@@ -153,3 +153,14 @@
     <td>Vote</td>
   </tr>
 </table>
+
+</br></br>
+
+<h2>    
+  Стек технологий:
+</h2>
+<lo>
+  <li>Spring(Boot, Hibernate, Security)</li>
+  <li>h2 database</li>
+  <li>REST-api</li>
+</lo>
