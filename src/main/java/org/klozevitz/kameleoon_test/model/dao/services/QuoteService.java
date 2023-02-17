@@ -6,7 +6,6 @@ import org.klozevitz.kameleoon_test.model.dao.repositories.IRepoUser;
 import org.klozevitz.kameleoon_test.model.dao.repositories.IRepoVote;
 import org.klozevitz.kameleoon_test.model.entities.Quote;
 import org.klozevitz.kameleoon_test.model.entities.User;
-import org.klozevitz.kameleoon_test.model.entities.Vote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,14 +29,15 @@ public class QuoteService implements IDaoQuote {
     }
 
     @Override
-    public Quote findById(Long id) {
-        return quoteRepo.findById(id).orElse(new Quote());
+    public Quote findById(int id) {
+        return quoteRepo.findById((long) id).orElse(new Quote());
     }
 
     @Override
     public Quote save(Quote quote) {
         Quote saved = quoteRepo.save(quote);
-        userRepo.findById(quote.getUser().getId()).orElse(new User()).getQuotes().add(saved);
+        User user = userRepo.findById(quote.getUser().getId()).orElse(new User());
+        user.getQuotes().add(saved);
         return saved;
     }
 

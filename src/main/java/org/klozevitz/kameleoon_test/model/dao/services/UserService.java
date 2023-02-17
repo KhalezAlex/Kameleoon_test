@@ -1,11 +1,14 @@
 package org.klozevitz.kameleoon_test.model.dao.services;
 
 import org.klozevitz.kameleoon_test.model.dao.daoDB.IDaoUser;
+import org.klozevitz.kameleoon_test.model.entities.Quote;
 import org.klozevitz.kameleoon_test.model.entities.User;
 import org.klozevitz.kameleoon_test.model.dao.repositories.IRepoUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserService implements IDaoUser {
@@ -15,10 +18,18 @@ public class UserService implements IDaoUser {
     @Autowired
     BCryptPasswordEncoder encoder;
 
+
 //needed for tests
     @Override
-    public User findById(Long id) {
-        return userRepo.findById(id).orElse(new User());
+    public User findById(int id) {
+        for(Quote quote: userRepo.findById((long) id).orElse(new User()).getQuotes())
+            System.out.println(quote.getId());
+        return userRepo.findById((long) id).orElse(new User());
+    }
+
+    @Override
+    public List<User> findAll() {
+        return (List<User>) userRepo.findAll();
     }
 
     @Override

@@ -11,12 +11,17 @@ public class UserController {
     @Autowired
     IDaoUser userDao;
 
+    @GetMapping("/findById")
+    public User find(@RequestParam int id) {
+        return userDao.findById(id);
+    }
+
     @PostMapping("/save")
-    public User save(@RequestParam String name, @RequestParam String password,
+    public void save(@RequestParam String name, @RequestParam String password,
                      @RequestParam(required = false) String email) {
         if (email == null) {
-            return userDao.save(new User(name, password));
+            userDao.save(new User(name, password));
         }
-        return userDao.save(new User(name, email, password));
+        userDao.save(new User(name, email, password));
     }
 }

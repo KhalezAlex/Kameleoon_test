@@ -26,18 +26,17 @@ public class QuoteController {
     }
 
     @GetMapping("/findById")
-    Quote findByyId(@RequestParam Long id) {
+    Quote findById(@RequestParam int id) {
         return quoteDao.findById(id);
     }
 
     @PostMapping("/save")
     @Transactional
-    Quote save(@RequestParam String content, @RequestParam Long userId) {
+    public void save(@RequestParam String content, @RequestParam int userId) {
         User user = userDao.findById(userId);
-        if (user.getId() == -1L) {
-            return new Quote();
+        if (user.getId() != -1L) {
+            quoteDao.save(new Quote(content, user));
         }
-        return quoteDao.save(new Quote(content, user));
     }
 
     @PostMapping("/update")
@@ -46,8 +45,8 @@ public class QuoteController {
     }
 
     @GetMapping("/delete")
-    Quote delete(Long id) {
-        return quoteDao.delete(id);
+    Quote delete(@RequestParam int id) {
+        return quoteDao.delete((long)   id);
     }
 
     @GetMapping("/top_ten")

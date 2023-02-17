@@ -2,14 +2,12 @@ package org.klozevitz.kameleoon_test.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
 
-@Data
 @Entity
 @Table(name = "quote_t")
 public class Quote {
@@ -26,16 +24,55 @@ public class Quote {
     private LocalDate updated;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @OneToMany(mappedBy = "quote")
     @JsonIgnore
+    @OneToMany(mappedBy = "quote")
     Set<Vote> votes;
 
 
+    public Long getId() {
+        return id;
+    }
 
-// nullObject for Optional<Quote> database responses
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public LocalDate getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(LocalDate updated) {
+        this.updated = updated;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Set<Vote> getVotes() {
+        return votes;
+    }
+
+    public void setVotes(Set<Vote> votes) {
+        this.votes = votes;
+    }
+
+    // nullObject for Optional<Quote> database responses
     public Quote() {
         this.id = -1L;
         this.content = "undefined";
@@ -48,12 +85,14 @@ public class Quote {
         this.content = content;
         this.updated = LocalDate.now();
         this.user = user;
+        this.votes = new HashSet<>();
     }
 
     public Quote(Long id, String content) {
         this.id = id;
         this.updated = LocalDate.now();
         this.content = content;
+        this.votes = new HashSet<>();
     }
 
     @Override

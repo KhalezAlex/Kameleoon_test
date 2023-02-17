@@ -7,7 +7,6 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "vote_t")
-@Data
 public class Vote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,8 +22,39 @@ public class Vote {
     @JoinColumn(name = "quote_id")
     Quote quote;
 
+    public Long getId() {
+        return id;
+    }
 
-//nullObject for Optional<Like> database responses
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Boolean getVote() {
+        return vote;
+    }
+
+    public void setVote(Boolean vote) {
+        this.vote = vote;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public Quote getQuote() {
+        return quote;
+    }
+
+    public void setQuote(Quote quote) {
+        this.quote = quote;
+    }
+
+    //nullObject for Optional<Like> database responses
     public Vote() {
         this.id = -1L;
         this.vote = false;

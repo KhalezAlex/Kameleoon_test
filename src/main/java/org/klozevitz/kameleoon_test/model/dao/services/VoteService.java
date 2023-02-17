@@ -18,8 +18,8 @@ public class VoteService implements IDaoVote {
     IRepoQuote quoteRepo;
 
     @Override
-    public Vote findById(Long id) {
-        return voteRepo.findById(id).orElse(new Vote());
+    public Vote findById(int id) {
+        return voteRepo.findById((long) id).orElse(new Vote());
     }
 
     @Override
