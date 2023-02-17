@@ -164,3 +164,10 @@
   <li>h2 database</li>
   <li>REST-api</li>
 </lo>
+
+<h3>Не выполнено:</h3>
+<lo>
+  <li>
+    работа с Docker
+  </li>
+</lo>
