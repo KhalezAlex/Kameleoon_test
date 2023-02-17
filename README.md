@@ -53,7 +53,7 @@
     <td>Endpoint</td>
     <td>Method</td>
     <td>Parameters</td>
-    <td>Object</td>
+    <td>Response Object</td>
   </thead>
   <tr>
     <td>save</td>
@@ -70,7 +70,7 @@
     <td>Endpoint</td>
     <td>Method</td>
     <td>Parameters</td>
-    <td>Object</td>
+    <td>Response Object</td>
   </thead>
   <tr>
     <td>findAll</td>
@@ -127,5 +127,22 @@
     <td>Get</td>
     <td></td>
     <td>Quote</td>
+  </tr>
+</table>
+<h3>Сущность Vote (реализовано анонимное голосование)</h3>
+<table>
+  <thead>
+    <td>Operation</td>
+    <td>Endpoint</td>
+    <td>Method</td>
+    <td>Parameters</td>
+    <td>Response Object</td>
+  </thead>
+  <tr>
+    <td>vote</td>
+    <td>"/vote"</td>
+    <td>Post</td>
+    <td>boolean vote, int quoteId</td>
+    <td>Vote</td>
   </tr>
 </table>
