@@ -1,7 +1,6 @@
 package org.klozevitz.kameleoon_test.model.dao.services;
 
 import org.klozevitz.kameleoon_test.model.dao.daoDB.IDaoUser;
-import org.klozevitz.kameleoon_test.model.entities.Quote;
 import org.klozevitz.kameleoon_test.model.entities.User;
 import org.klozevitz.kameleoon_test.model.dao.repositories.IRepoUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,6 @@ public class UserService implements IDaoUser {
 //needed for tests
     @Override
     public User findById(int id) {
-        for(Quote quote: userRepo.findById((long) id).orElse(new User()).getQuotes())
-            System.out.println(quote.getId());
         return userRepo.findById((long) id).orElse(new User());
     }
 

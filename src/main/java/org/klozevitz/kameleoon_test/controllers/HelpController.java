@@ -104,7 +104,7 @@ public class HelpController {
         int counter = 0;
         for (User user: users) {
             date = user.getRegistered();
-            quotesAmount = (int) (Math.random() * 12);
+            quotesAmount = (int) (Math.random() * 10);
             for (int i = 0; i < quotesAmount; i++) {
                 if (Math.random() > 0.3) {
                     date = date.plusDays((int) (Math.random() * 10));

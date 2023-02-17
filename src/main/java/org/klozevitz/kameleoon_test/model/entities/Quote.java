@@ -2,6 +2,8 @@ package org.klozevitz.kameleoon_test.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -10,6 +12,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "quote_t")
+@Getter
+@Setter
 public class Quote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,47 +36,7 @@ public class Quote {
     Set<Vote> votes;
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public LocalDate getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(LocalDate updated) {
-        this.updated = updated;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Set<Vote> getVotes() {
-        return votes;
-    }
-
-    public void setVotes(Set<Vote> votes) {
-        this.votes = votes;
-    }
-
-    // nullObject for Optional<Quote> database responses
+// nullObject for Optional<Quote> database responses
     public Quote() {
         this.id = -1L;
         this.content = "undefined";
