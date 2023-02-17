@@ -6,7 +6,10 @@ import org.klozevitz.kameleoon_test.model.entities.Quote;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
-
+/**
+Data transfer entity
+ -firstVoted and graphCords- data for diagrams
+*/
 @Data
 public class QuoteDTO {
     private Quote quote;

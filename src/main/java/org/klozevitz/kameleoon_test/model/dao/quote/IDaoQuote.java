@@ -1,5 +1,6 @@
-package org.klozevitz.kameleoon_test.model.dao.daoDB;
+package org.klozevitz.kameleoon_test.model.dao.quote;
 
+import org.klozevitz.kameleoon_test.model.dao.IDaoDB;
 import org.klozevitz.kameleoon_test.model.entities.Quote;
 import org.klozevitz.kameleoon_test.model.entities.dto.QuoteDTO;
 

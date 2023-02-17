@@ -1,4 +1,4 @@
-package org.klozevitz.kameleoon_test.model.dao.daoDB;
+package org.klozevitz.kameleoon_test.model.dao;
 
 public interface IDaoDB<E> {
     E findById(int id);

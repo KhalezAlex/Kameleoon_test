@@ -1,7 +1,7 @@
 package org.klozevitz.kameleoon_test.controllers;
 
-import org.klozevitz.kameleoon_test.model.dao.daoDB.IDaoQuote;
-import org.klozevitz.kameleoon_test.model.dao.daoDB.IDaoVote;
+import org.klozevitz.kameleoon_test.model.dao.quote.IDaoQuote;
+import org.klozevitz.kameleoon_test.model.dao.vote.IDaoVote;
 import org.klozevitz.kameleoon_test.model.entities.Quote;
 import org.klozevitz.kameleoon_test.model.entities.Vote;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,6 @@ public class VoteController {
     @Autowired
     IDaoQuote quoteDao;
 
-
     @GetMapping("/all")
     public List<Vote> all() {
         return voteDao.findAll();
@@ -28,6 +27,7 @@ public class VoteController {
         return voteDao.findById(id);
     }
 
+//saves new vote to "vote_t" table (returns nullObject if quote does not exist)
     @PostMapping("/vote")
     public Vote vote(@RequestParam boolean vote, @RequestParam int quoteId) {
         Quote quote = quoteDao.findById(quoteId);

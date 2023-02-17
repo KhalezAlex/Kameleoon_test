@@ -1,4 +1,4 @@
-package org.klozevitz.kameleoon_test.model.dao.repositories;
+package org.klozevitz.kameleoon_test.model.dao.user;
 
 import org.klozevitz.kameleoon_test.model.entities.User;
 import org.springframework.data.repository.CrudRepository;

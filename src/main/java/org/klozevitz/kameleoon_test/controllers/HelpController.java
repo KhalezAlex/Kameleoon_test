@@ -1,8 +1,8 @@
 package org.klozevitz.kameleoon_test.controllers;
 
-import org.klozevitz.kameleoon_test.model.dao.daoDB.IDaoQuote;
-import org.klozevitz.kameleoon_test.model.dao.daoDB.IDaoUser;
-import org.klozevitz.kameleoon_test.model.dao.daoDB.IDaoVote;
+import org.klozevitz.kameleoon_test.model.dao.quote.IDaoQuote;
+import org.klozevitz.kameleoon_test.model.dao.user.IDaoUser;
+import org.klozevitz.kameleoon_test.model.dao.vote.IDaoVote;
 import org.klozevitz.kameleoon_test.model.entities.Quote;
 import org.klozevitz.kameleoon_test.model.entities.User;
 import org.klozevitz.kameleoon_test.model.entities.Vote;
@@ -24,6 +24,7 @@ public class HelpController {
     @Autowired
     IDaoVote voteDao;
 
+//generates test base
     @GetMapping("/generateBase")
     public String generateBase() {
         if (userDao.findById(1).getId() == -1L)

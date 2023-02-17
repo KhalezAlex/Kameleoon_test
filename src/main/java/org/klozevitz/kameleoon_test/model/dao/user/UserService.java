@@ -1,21 +1,21 @@
-package org.klozevitz.kameleoon_test.model.dao.services;
+package org.klozevitz.kameleoon_test.model.dao.user;
 
-import org.klozevitz.kameleoon_test.model.dao.daoDB.IDaoUser;
 import org.klozevitz.kameleoon_test.model.entities.User;
-import org.klozevitz.kameleoon_test.model.dao.repositories.IRepoUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class UserService implements IDaoUser {
     @Autowired
-    IRepoUser userRepo;
+    private IRepoUser userRepo;
 
     @Autowired
-    BCryptPasswordEncoder encoder;
+    private BCryptPasswordEncoder encoder;
 
 
 //needed for tests
@@ -29,9 +29,9 @@ public class UserService implements IDaoUser {
         return (List<User>) userRepo.findAll();
     }
 
+//would not save duplicate usernames. returns nullObject instead
     @Override
     public User save(User user) {
-//would not save duplicate usernames
         if (userRepo.findByName(user.getName()).isPresent()) {
             return new User();
         }

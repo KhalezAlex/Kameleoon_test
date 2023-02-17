@@ -1,7 +1,7 @@
 package org.klozevitz.kameleoon_test.controllers;
 
-import org.klozevitz.kameleoon_test.model.dao.daoDB.IDaoQuote;
-import org.klozevitz.kameleoon_test.model.dao.daoDB.IDaoUser;
+import org.klozevitz.kameleoon_test.model.dao.quote.IDaoQuote;
+import org.klozevitz.kameleoon_test.model.dao.user.IDaoUser;
 import org.klozevitz.kameleoon_test.model.entities.Quote;
 import org.klozevitz.kameleoon_test.model.entities.User;
 import org.klozevitz.kameleoon_test.model.entities.dto.QuoteDTO;
@@ -31,6 +31,7 @@ public class QuoteController {
         return quoteDao.findById(id);
     }
 
+//saves new quote to "quote_t" table (returns nullObject if user does not exist)
     @PostMapping("/save")
     @Transactional
     public Quote save(@RequestParam String content, @RequestParam int userId) {

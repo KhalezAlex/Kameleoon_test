@@ -1,4 +1,4 @@
-package org.klozevitz.kameleoon_test.model.dao.services.utilities;
+package org.klozevitz.kameleoon_test.model.dao.quote.utilities;
 
 import org.klozevitz.kameleoon_test.model.entities.Quote;
 

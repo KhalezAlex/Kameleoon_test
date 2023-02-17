@@ -1,4 +1,4 @@
-package org.klozevitz.kameleoon_test.model.dao.repositories;
+package org.klozevitz.kameleoon_test.model.dao.vote;
 
 import org.klozevitz.kameleoon_test.model.entities.Quote;
 import org.klozevitz.kameleoon_test.model.entities.Vote;
