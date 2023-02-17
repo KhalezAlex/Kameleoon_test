@@ -63,3 +63,69 @@
     <td>User</td>
   </tr>
 </table>
+<h3>Сущность Quote</h3>
+<table>
+  <thead>
+    <td>Operation</td>
+    <td>Endpoint</td>
+    <td>Method</td>
+    <td>Parameters</td>
+    <td>Object</td>
+  </thead>
+  <tr>
+    <td>findAll</td>
+    <td>"/all"</td>
+    <td></td>
+    <td>Get</td>
+    <td>List<Quote></td>
+  </tr>
+  <tr>
+    <td>findById</td>
+    <td>"/findById"</td>
+    <td>int id</td>
+    <td>Get</td>
+    <td>Quote</td>
+  </tr>
+  <tr>
+    <td>save</td>
+    <td>"/save"</td>
+    <td>String content, int userId</td>
+    <td>Post</td>
+    <td>Quote</td>
+  </tr>
+  <tr>
+    <td>update</td>
+    <td>"/update"</td>
+    <td>int quoteId, String content</td>
+    <td>Post</td>
+    <td>Quote</td>
+  </tr>
+  <tr>
+    <td>delete</td>
+    <td>"/delete"</td>
+    <td>int id</td>
+    <td>Get</td>
+    <td>Quote</td>
+  </tr>
+  <tr>
+    <td>top ten</td>
+    <td>"/top_ten"</td>
+    <td></td>
+    <td>Get</td>
+    <td>LinkedList<QuoteDTO></td>
+  </tr>
+  <tr>
+    <td>worst ten</td>
+    <td>"/worst_ten"</td>
+    <td></td>
+    <td>Get</td>
+    <td>LinkedList<QuoteDTO></td>
+  </tr>
+  <tr>
+    <td>random</td>
+    <td>"/random"</td>
+    <td></td>
+    <td>Get</td>
+    <td>Quote</td>
+  </tr>
+</table>
