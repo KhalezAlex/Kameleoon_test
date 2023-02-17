@@ -95,6 +95,17 @@ public class Quote {
         this.votes = new HashSet<>();
     }
 
+    public int rate() {
+        int rate = 0;
+        for(Vote vote: votes) {
+            if (vote.getVote())
+                rate++;
+            else
+                rate--;
+        }
+        return rate;
+    }
+
     @Override
     public String toString() {
         return "{content='" + content + "', updated=" + updated +

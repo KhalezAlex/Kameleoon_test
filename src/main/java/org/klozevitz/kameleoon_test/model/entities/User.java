@@ -2,7 +2,6 @@ package org.klozevitz.kameleoon_test.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -82,7 +81,8 @@ public class User {
         this.quotes = quotes;
     }
 
-    // nullObject for further usages
+
+// nullObject for further usages
     public User() {
         this.id = -1L;
         this.name = "undefined";

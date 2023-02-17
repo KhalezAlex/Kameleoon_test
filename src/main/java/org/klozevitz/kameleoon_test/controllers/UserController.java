@@ -17,11 +17,11 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public void save(@RequestParam String name, @RequestParam String password,
+    public User save(@RequestParam String name, @RequestParam String password,
                      @RequestParam(required = false) String email) {
         if (email == null) {
-            userDao.save(new User(name, password));
+            return userDao.save(new User(name, password));
         }
-        userDao.save(new User(name, email, password));
+        return userDao.save(new User(name, email, password));
     }
 }

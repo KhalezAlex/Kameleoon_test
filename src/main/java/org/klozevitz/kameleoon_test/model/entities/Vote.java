@@ -1,7 +1,6 @@
 package org.klozevitz.kameleoon_test.model.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.time.LocalDate;
 
@@ -67,6 +66,8 @@ public class Vote {
         this.date = LocalDate.now();
         this.quote = quote;
     }
+
+
 
     @Override
     public String toString() {

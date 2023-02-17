@@ -28,11 +28,12 @@ public class VoteController {
         return voteDao.findById(id);
     }
 
-    @PostMapping("/save")
-    public void save(@RequestParam boolean vote, @RequestParam int quoteId) {
+    @PostMapping("/vote")
+    public Vote vote(@RequestParam boolean vote, @RequestParam int quoteId) {
         Quote quote = quoteDao.findById(quoteId);
         if (quote.getId() != -1) {
-            voteDao.save(new Vote(vote, quote));
+            return voteDao.save(new Vote(vote, quote));
         }
+        return new Vote();
     }
 }
